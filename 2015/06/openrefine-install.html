@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Nicolas Bohorquez" />
+	<meta name="copyright" content="Nicolas Bohorquez" />
+
+<meta name="keywords" content="openrefine, data science, Tools, " />
+	<title>Openrefine  - Iniciando con OpenRefine  · Alephsa
+</title>
+    <link rel="stylesheet" href="/theme/css/bootstrap.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/theme/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/theme/css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="/theme/css/creative.css" type="text/css">
+    <script type="text/javascript" src="/theme/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/theme/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/theme/js/jquery.easing.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">Alephsa</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+					<li ><a href="/pages/porque-alephsa.html">Alephsa?</a></li>
+					<li ><a href="/pages/ada.html">Análisis de datos</a></li>
+					<li ><a href="/pages/community.html">Comunidades</a></li>
+					<li ><a href="/pages/infocracia.html">Infocracia</a></li>
+					<li ><a href="/pages/team.html">Equipo</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+<header class="header-article">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-left ">
+				<div class="col-lg-8">
+					<h1 class="section-heading">Openrefine</h1>
+
+				<h3 class="text-faded">Iniciando con OpenRefine</h3>
+				<p>
+							<em>Publicado por</em>
+							<a href="#">Nicolas Bohorquez</a>
+							<em>en</em>
+							<time pubdate="pubdate" datetime="2015-06-23T15:42:00-05:00">jun 23, 2015</time>
+							<em> - Actualizado</em>
+							<time pubdate="modified" datetime="2015-06-23T15:42:00-05:00">jun 23, 2015</time>
+					/
+							<em>Categoría :</em>
+							<a class="category-link" href="/categories.html#Tools-ref">Tools</a>
+				</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</header>
+<section>
+	<div class="container">
+
+        <div class="row">
+            <!-- Blog Post Content Column -->
+        <div class="col-lg-8">
+				<div class="col-lg-2">
+					<img src="/images/ds/openrefine.jpg" title="Openrefine" width="120px" />
+				</div>
+				<div class="col-lg-6">
+					<strong>Serie</strong>: openrefine&nbsp;<br/>
+                    <strong>Etiquetas</strong>:
+                        <a href="/tags.html#data-science-ref">data science</a>
+                        <a href="/tags.html#openrefine-ref">openrefine</a>
+&nbsp;
+				</div>
+				<div class="col-lg-12">
+	                <!-- Post Content -->
+	                <p class="lead"><p>En <a href="http://www.alephsa.com" title="Alephsa"><strong>Alephsa</strong></a> manejamos <em>datasets</em><sup id="sf-openrefine-install-1-back"><a class="simple-footnote" href="#sf-openrefine-install-1" title="conjuntos de datos">1</a></sup> muy variados, y las labores de ingenieria de datos además de gustarnos nos permite probar herramientas muy variadas, de hecho es bien conocido que la mayor parte del trabajo en <em>data science</em> actualmente tiene que ver con la ingeniería de datos, es decir a labores de búsqueda, descarga y limpieza de datos.</p>
+<p><a href="http://openrefine.org" title="OpenRefine">Openrefine</a> es una herramienta que provee un servidor para realizar este tipo de tareas con un cliente web muy sencillo de manejar, incluye utilidades comunes para el tratamiento de datos, un lenguaje de expresiones propio (<a href="https://github.com/OpenRefine/OpenRefine/wiki/Jython" title="GREL">GREL</a>) o usar Python (<a href="https://github.com/OpenRefine/OpenRefine/wiki/Jython" title="Jython en openrefine">Jython 2.5.1</a>) como lenguaje<sup id="sf-openrefine-install-2-back"><a class="simple-footnote" href="#sf-openrefine-install-2" title="Estaria bueno incluir la nueva version 2.7 de Jython para tener mayor compatibilidad">2</a></sup>. En esta serie de post trabajaremos sobre Linux pero las instrucciones son fácilmente adaptables a otros sistemas operativos<sup id="sf-openrefine-install-3-back"><a class="simple-footnote" href="#sf-openrefine-install-3" title="Aunque deberia considerar probar Linux, es libre y tiene muchas otras ventajas">3</a></sup>.</p>
+<h1 id="primeros-pasos">Primeros pasos</h1>
+<p>La wiki de OpenRefine tiene <a href="https://github.com/OpenRefine/OpenRefine/wiki/Installation-Instructions" title="Instalar OpenRefine">instrucciones</a> muy claras sobre la descarga y ejecución en Linux, Win2 y MacOS. Sin embargo me gustaría agregar que es buena idea agregar más memoria a la ejecución del servidor si se quiere trabajar comodamente con <em>datasets</em> de mas de algunas decenas de miles de datos. Para ello la wiki contiene <a href="https://github.com/OpenRefine/OpenRefine/wiki/FAQ:-Allocate-More-Memory" title="Agregar mas memoria a OpenRefine">instrucciones</a> claras por plataforma.</p>
+<h1 id="dataset-de-ejemplo">Dataset de ejemplo</h1>
+<p>Existen muchos conjuntos de datos disponibles en la red, para nuestros ejercicios vamos a usar los disponibles en el <a href="http://datos.gov.co/frm/buscador/frmBuscador.aspx" title="Open data del estado Colombiano"><em>Catalogo de datos abiertos del estado Colombiano</em></a> , más específicamente los "<a href="http://datos.gov.co/frm/catalogo/frmCatalogo.aspx?dsId=67" title="Contratos públicos activos publicados en el secop">Contratos públicos activos publicados en el secop</a>" (461268 registros) y el "<a href="http://datos.gov.co/frm/catalogo/frmCatalogo.aspx?dsId=68" title="Histórico de los contratos públicos publicados en el secop">Histórico de los contratos públicos publicados en el secop</a>" (166850 registros) que nos deberian permitir trabajar sobre una base de 628118 filas con las siguientes columnas:</p>
+<ul>
+<li>numerocontrato</li>
+<li>numeroproceso</li>
+<li>tipoproceso</li>
+<li>estadocontrato</li>
+<li>tipocontrato</li>
+<li>nombreentidad</li>
+<li>detalleobjeto</li>
+<li>razonsocialcontratista</li>
+<li>deptomunicejecucion</li>
+<li>valorcontrato</li>
+<li>fechafirmacontrato</li>
+<li>fechaliquidacion</li>
+<li>fechaterminacionanticipada</li>
+</ul>
+<p>Sobre los cuales vamos a hacer algunas tareas comunes para poder hacer un analisis preliminar.</p>
+<h1 id="agregando-los-datos">Agregando los datos</h1>
+<p>Cada uno de los <em>dataset</em> consiste en varios archivos separados por comas (CSV) que debemos concatenar antes de cargarlos en OpenRefine. Para ello desde una terminal nos situamos en el directorio donde tenemos los archivos y ejecutamos:</p>
+<div class="highlight"><pre>&gt; cd /home/usuario/directorio_donde_estan_los_archivos
+&gt; cat Ministerio_de_tecnologias_de_informacion_y_las_comunicaciones.contratoshistoricos* &gt; mtic.contratos.historicos.csv
+&gt; cat Ministerio_de_tecnologias_de_informacion_y_las_comunicaciones.contratosactivos*  mtic.contratos.activos.csv
+&gt; cat mtic.contratos.* &gt; mtic.contratos.csv
+</pre></div>
+
+
+<p>estos comandos agruparan en tres archivos todos los que descargamos previamente:</p>
+<ul>
+<li>mtic.contratos.activos.csv</li>
+<li>mtic.contratos.historicos.csv</li>
+<li>mtic.contratos.csv : Suma de los anteriores</li>
+</ul>
+<p>y desde OpenRefine hacemos un nuevo proyecto con el archivo <strong>mtic.contratos.csv</strong>:</p>
+<p><img src="/images/openrefine/1-1.png" width="640px" title="Proyecto en OpenRefine"></p>
+<p>Una vez generado el proyecto lo primero que notamos es que el numero de registros no coincide (628111 vs 628118 esperados), porque? cómo lo arreglamos?, para resolver éstas y otras dudas (además de generar nuevas dudas), por favor, continúe con nuestro siguiente post.</p>
+<p>Un saludo.</p><ol class="simple-footnotes"><li id="sf-openrefine-install-1">conjuntos de datos <a class="simple-footnote-back" href="#sf-openrefine-install-1-back">↩</a></li><li id="sf-openrefine-install-2">Estaria bueno incluir la nueva version 2.7 de Jython para tener mayor compatibilidad <a class="simple-footnote-back" href="#sf-openrefine-install-2-back">↩</a></li><li id="sf-openrefine-install-3">Aunque deberia considerar probar Linux, es libre y tiene muchas otras ventajas <a class="simple-footnote-back" href="#sf-openrefine-install-3-back">↩</a></li></ol></p>
+						<div class="col-lg-12">
+						    <p>Este articulo es el número 1 en la serie "openrefine", otros artículos:</p>
+						    <ol class="parts">
+						            <li class="active">
+						                <a href='/2015/06/openrefine-install.html'>Openrefine</a>
+						            </li>
+						            <li >
+						                <a href='/2015/06/openrefine-filters.html'>Filtros y grupos en Openrefine</a>
+						            </li>
+						            <li >
+						                <a href='/2015/06/openrefine-duplicates.html'>Duplicados en Openrefine</a>
+						            </li>
+						            <li >
+						                <a href='/2015/06/openrefine-split.html'>Separar datos en Openrefine</a>
+						            </li>
+						    </ol>
+						</div>
+				</div>
+      </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+        <div class='col-lg-4 ' style="border-left:solid 1px #e56f0e;">
+
+					<h5>Nube de Etiquetas</h5>
+					<ul class="tagcloud">
+					        <li class="tag-4"><a href="/tag/wordpress.html">wordpress</a></li>
+					        <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
+					        <li class="tag-4"><a href="/tag/publishing.html">publishing</a></li>
+					        <li class="tag-1"><a href="/tag/data-science.html">data science</a></li>
+					        <li class="tag-4"><a href="/tag/r.html">R</a></li>
+					        <li class="tag-4"><a href="/tag/pelican.html">pelican</a></li>
+					        <li class="tag-1"><a href="/tag/openrefine.html">openrefine</a></li>
+					</ul>
+					<p>
+						<small><a href="/random.html" title="Leer un articulo al azar">Me siento con suerte</a></small>
+					</p>
+                    <!-- Begin MailChimp Signup Form -->
+                    <div id="mc_embed_signup">
+                        <form action="Powered by mailchimp" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <h5>Suscribase a las actualizaciones</h5>
+                            <input type="email" value="" name="EMAIL" class="email input-sm" id="mce-EMAIL" placeholder="name@ejemplo.com" required>
+                            <input type="submit" value="Suscribirme" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+                        </form>
+                    </div>
+
+                    <!--End mc_embed_signup-->
+                </div>
+            </div>
+        </div>
+			<div class="row">
+				<!-- Blog Post Content Column -->
+				<div class="col-lg-8">
+				    <p id="post-share-links">
+				        Compartir en:
+				        <a href="http://twitter.com/home?status=Openrefine%20Iniciando%20con%20OpenRefine%20/2015/06/openrefine-install.html" target="_blank" title="Share on Twitter">Twitter</a>
+				        ❄
+				        <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=/2015/06/openrefine-install.html" target="_blank" title="Share on Facebook">Facebook</a>
+				        ❄
+				        <a href="https://plus.google.com/share?url=/2015/06/openrefine-install.html" target="_blank" title="Share on Google Plus">Google+</a>
+				        ❄
+				        <a href="mailto:?subject=Openrefine%20Iniciando%20con%20OpenRefine&amp;body=/2015/06/openrefine-install.html" target="_blank" title="Share via Email">Email</a>
+				    </p>
+				</div>
+			</div>
+    </div>
+</section>
+
+<a  name="contact"></a>
+    <!-- Footer -->
+    <footer >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+            					<li ><a href="/pages/porque-alephsa.html">Alephsa?</a></li>
+            					<li ><a href="/pages/ada.html">Análisis de datos</a></li>
+            					<li ><a href="/pages/community.html">Comunidades</a></li>
+            					<li ><a href="/pages/infocracia.html">Infocracia</a></li>
+            					<li ><a href="/pages/team.html">Equipo</a></li>
+                    </ul>
+                    <p class="copyright text-muted small"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Alephsa website</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.alephsa.com" property="cc:attributionName" rel="cc:attributionURL">Alephsa SAS</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+    
+</body>
+
+</html>

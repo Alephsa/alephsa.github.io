@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Nicolas Bohorquez" />
+	<meta name="copyright" content="Nicolas Bohorquez" />
+
+<meta name="keywords" content="openrefine, data science, Tools, " />
+	<title>Duplicados en Openrefine  - Seek and destroy duplicates  · Alephsa
+</title>
+    <link rel="stylesheet" href="/theme/css/bootstrap.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/theme/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/theme/css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="/theme/css/creative.css" type="text/css">
+    <script type="text/javascript" src="/theme/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/theme/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/theme/js/jquery.easing.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">Alephsa</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+					<li ><a href="/pages/porque-alephsa.html">Alephsa?</a></li>
+					<li ><a href="/pages/ada.html">Análisis de datos</a></li>
+					<li ><a href="/pages/community.html">Comunidades</a></li>
+					<li ><a href="/pages/infocracia.html">Infocracia</a></li>
+					<li ><a href="/pages/team.html">Equipo</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+<header class="header-article">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-left ">
+				<div class="col-lg-8">
+					<h1 class="section-heading">Duplicados en Openrefine</h1>
+
+				<h3 class="text-faded">Seek and destroy duplicates</h3>
+				<p>
+							<em>Publicado por</em>
+							<a href="#">Nicolas Bohorquez</a>
+							<em>en</em>
+							<time pubdate="pubdate" datetime="2015-06-26T16:43:00-05:00">jun 26, 2015</time>
+							<em> - Actualizado</em>
+							<time pubdate="modified" datetime="2015-06-26T16:43:00-05:00">jun 26, 2015</time>
+					/
+							<em>Categoría :</em>
+							<a class="category-link" href="/categories.html#Tools-ref">Tools</a>
+				</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</header>
+<section>
+	<div class="container">
+
+        <div class="row">
+            <!-- Blog Post Content Column -->
+        <div class="col-lg-8">
+				<div class="col-lg-2">
+					<img src="/images/ds/openrefine-duplicates.jpg" title="Duplicados en Openrefine" width="120px" />
+				</div>
+				<div class="col-lg-6">
+					<strong>Serie</strong>: openrefine&nbsp;<br/>
+                    <strong>Etiquetas</strong>:
+                        <a href="/tags.html#data-science-ref">data science</a>
+                        <a href="/tags.html#openrefine-ref">openrefine</a>
+&nbsp;
+				</div>
+				<div class="col-lg-12">
+	                <!-- Post Content -->
+	                <p class="lead"><p>Un asunto importante en la limpieza de datos es poder encontrar los registros duplicados, muchas veces al sumar fuentes de datos heterogeneas es posible que se encuentren los mismos datos y eso desvie el análisis de manera inconveniente, en OpenRefine es muy sencillo encontrar y eliminarlos.</p>
+<h1 id="normalizar-los-datos">Normalizar los datos</h1>
+<p>Con una simple inspección de la primer página de registros notamos que las columnas contienen datos en mayúsculas/minúsculas para normalizarlas usamos las transformaciones comunes de celdas (clic en la columna-&gt;Edit cells-&gt;Common transforms-&gt;To uppercase) en todas las columnas de tipo texto.</p>
+<p>Ahora bien, es posible que haya datos muy similares por columna pero no iguales, para encontrarlos usamos las funciones integradas de OpenRefine para hacer <em>clusters</em> a partir de funciones de <a href="https://github.com/Simmetrics/simmetrics" title="Similarity or Distance Metrics">comparación de cadenas de texto</a><sup id="sf-openrefine-duplicates-1-back"><a class="simple-footnote" href="#sf-openrefine-duplicates-1" title="Para conocer más se puede consultar el proyecto Simmetrics en Github">1</a></sup> como <em>keycollision</em> o <em>Levenshtein</em>:</p>
+<p><img src="/images/openrefine/3-1.png" width="640px" title="Facet para encontrar valores nulos"></p>
+<p>La idea es que se usa un algoritmo para encontrar valores que posiblemente sean iguales pero por alguna razón no aparecen asi en los datos, en nuestro caso con Keycollision / fingerprint encontramos más de 14000 posibles clusters, sin embargo no siempre son acertadas las propuestas asi que vamos a refinar la busqueda usando el panel derecho en la segunda fila para mostrar únicamente los <em>clusters</em> encontrados con más de 100 registros, para obtener 71 posibles <em>clusters</em>, revisamos cada uno y seleccionamos para normalizar los que tengan más sentido (S.N. transformarlo en N/A, '-' transformarlo en 'N/A', etc):</p>
+<p><img src="/images/openrefine/3-2.png" width="640px" title="Facet para encontrar valores nulos"></p>
+<p>Este procedimiento podemos efectuarlo de forma iterativa hasta lograr una normalización aceptable de los datos en la columna, del mismo modo podemos hacerlo sobre las otras columnas para dejar los <em>clusters</em> mas apropiados y luego encontrar los duplicados. (Aquí es donde la mayor parte del tiempo se invierte).</p>
+<p>Otra forma de filtrar los datos es buscar las agrupaciones que no corresponden con su tipo de datos, por ejemplo, en la columna <em>valorcontrato</em> podemos aplicar un <em>Facet</em> de tipo numerico para arreglar los registros que no se encuentran con el formato apropiado. También podemos convertir la columna <em>fechafirmacontrato</em> en un tipo de datos <em>Date</em> (clic en columna-&gt;Edit cells-&gt;Common transforms-&gt;To date) para luego aplicar un facet de tipo <em>timeline</em> para detectar los que debemos modificar.</p>
+<p>Para acelerar nuestro ejemplo optamos por eliminar dichos registros ( no es la práctica recomendada ), con lo cual obtenemos un <em>dataset</em> de 625947 registros a los cuales vamos a quitarles los duplicados.</p>
+<h1 id="encontrar-los-duplicados">Encontrar los duplicados</h1>
+<p>Los duplicados pueden referirse a valores únicos de una columna, por ejemplo buscar los id únicos de un <em>dataset</em>, estamos tentados a aplicar la solución que se describe en la <a href="https://github.com/OpenRefine/OpenRefine/wiki/Recipes#removing-duplicate-rows-when-exact-values-are-found-in-a-column" title="Eliminar duplicados">wiki</a> de OpenRefine para eliminar los duplicados:</p>
+<ul>
+<li>Order de manera permanente los datos de la columna por la cual queremos eliminar los duplicados</li>
+<li>Hacer un <em>blank down</em> (clic en la columna-&gt;Edit cells-&gt;Blank down) para dejar como nulos los valores repetidos en la columna</li>
+<li>Agrupar con un <em>Facet</em> nulo (clic en la columna-&gt;Facet-Customized facets-&gt;Facet by blank) y seleccionar los nulos en el panel izquierdo</li>
+<li>Eliminar las filas</li>
+</ul>
+<p>Sin embargo, al conocer el dominio del problema, sabemos que pueden hacerse múltiples contratos para varios proveedores en el mismo proceso de contratación, así que para nuestro ejemplo vamos a buscar los registros que comparten:</p>
+<ul>
+<li>numerodecontrato</li>
+<li>numerodeproceso</li>
+<li>detalleobjeto</li>
+<li>razonsocialcontratista</li>
+</ul>
+<p>Para ello seleccionamos en cada columna un <em>Facet</em> de tipo <em>duplicate</em> (clic en la columna-&gt;Facet-Customized facets-&gt;Duplicates facet) y en la panel izquierdo hacemos clic en <em>true</em> para cada uno de los grupos. De esa manera podemos borrar los registros de los contratos completamente duplicados, después de lo cual tenemos 589866 registros para responder algunas preguntas.</p>
+<p>Entre otras, ¿Como se distribuye en el tiempo la firma de los contratos?, ¿Cómo se distribuyen geográficamente los contratos? para responder estas preguntas debemos separar la columna <em>deptomunicejecucion</em> y <em>fechafirmacontrato</em>, lo cual veremos en la próxima entrega de la serie.</p><ol class="simple-footnotes"><li id="sf-openrefine-duplicates-1">Para conocer más se puede consultar el proyecto Simmetrics en Github <a class="simple-footnote-back" href="#sf-openrefine-duplicates-1-back">↩</a></li></ol></p>
+						<div class="col-lg-12">
+						    <p>Este articulo es el número 3 en la serie "openrefine", otros artículos:</p>
+						    <ol class="parts">
+						            <li >
+						                <a href='/2015/06/openrefine-install.html'>Openrefine</a>
+						            </li>
+						            <li >
+						                <a href='/2015/06/openrefine-filters.html'>Filtros y grupos en Openrefine</a>
+						            </li>
+						            <li class="active">
+						                <a href='/2015/06/openrefine-duplicates.html'>Duplicados en Openrefine</a>
+						            </li>
+						            <li >
+						                <a href='/2015/06/openrefine-split.html'>Separar datos en Openrefine</a>
+						            </li>
+						    </ol>
+						</div>
+				</div>
+      </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+        <div class='col-lg-4 ' style="border-left:solid 1px #e56f0e;">
+
+					<h5>Nube de Etiquetas</h5>
+					<ul class="tagcloud">
+					        <li class="tag-4"><a href="/tag/wordpress.html">wordpress</a></li>
+					        <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
+					        <li class="tag-4"><a href="/tag/publishing.html">publishing</a></li>
+					        <li class="tag-1"><a href="/tag/data-science.html">data science</a></li>
+					        <li class="tag-4"><a href="/tag/r.html">R</a></li>
+					        <li class="tag-4"><a href="/tag/pelican.html">pelican</a></li>
+					        <li class="tag-1"><a href="/tag/openrefine.html">openrefine</a></li>
+					</ul>
+					<p>
+						<small><a href="/random.html" title="Leer un articulo al azar">Me siento con suerte</a></small>
+					</p>
+                    <!-- Begin MailChimp Signup Form -->
+                    <div id="mc_embed_signup">
+                        <form action="Powered by mailchimp" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <h5>Suscribase a las actualizaciones</h5>
+                            <input type="email" value="" name="EMAIL" class="email input-sm" id="mce-EMAIL" placeholder="name@ejemplo.com" required>
+                            <input type="submit" value="Suscribirme" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+                        </form>
+                    </div>
+
+                    <!--End mc_embed_signup-->
+                </div>
+            </div>
+        </div>
+			<div class="row">
+				<!-- Blog Post Content Column -->
+				<div class="col-lg-8">
+				    <p id="post-share-links">
+				        Compartir en:
+				        <a href="http://twitter.com/home?status=Duplicados%20en%20Openrefine%20Seek%20and%20destroy%20duplicates%20/2015/06/openrefine-duplicates.html" target="_blank" title="Share on Twitter">Twitter</a>
+				        ❄
+				        <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=/2015/06/openrefine-duplicates.html" target="_blank" title="Share on Facebook">Facebook</a>
+				        ❄
+				        <a href="https://plus.google.com/share?url=/2015/06/openrefine-duplicates.html" target="_blank" title="Share on Google Plus">Google+</a>
+				        ❄
+				        <a href="mailto:?subject=Duplicados%20en%20Openrefine%20Seek%20and%20destroy%20duplicates&amp;body=/2015/06/openrefine-duplicates.html" target="_blank" title="Share via Email">Email</a>
+				    </p>
+				</div>
+			</div>
+    </div>
+</section>
+
+<a  name="contact"></a>
+    <!-- Footer -->
+    <footer >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+            					<li ><a href="/pages/porque-alephsa.html">Alephsa?</a></li>
+            					<li ><a href="/pages/ada.html">Análisis de datos</a></li>
+            					<li ><a href="/pages/community.html">Comunidades</a></li>
+            					<li ><a href="/pages/infocracia.html">Infocracia</a></li>
+            					<li ><a href="/pages/team.html">Equipo</a></li>
+                    </ul>
+                    <p class="copyright text-muted small"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Alephsa website</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.alephsa.com" property="cc:attributionName" rel="cc:attributionURL">Alephsa SAS</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+    
+</body>
+
+</html>

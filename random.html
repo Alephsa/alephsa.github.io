@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<head>
+    <title>random</title>
+    <script type="text/javascript">
+        function redirect(){
+            var urls = [
+ "/2015/06/openrefine-split.html",
+ "/2015/06/openrefine-duplicates.html",
+ "/2015/06/openrefine-filters.html",
+ "/2015/06/openrefine-install.html",
+ "/2015/06/r-en-ubuntu.html",
+ "/2015/06/wordpress-to-pelican.html",
+
+        ""];
+
+        var index = Math.floor(Math.random() * (urls.length-1));
+        window.location = urls[index];
+    }
+</script>
+<body onload="redirect()">
+</body>
+</html>

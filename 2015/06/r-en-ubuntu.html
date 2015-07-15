@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Nicolas Bohorquez" />
+	<meta name="copyright" content="Nicolas Bohorquez" />
+
+<meta name="keywords" content="R, data science, ubuntu, Tools, " />
+	<title>R en ubuntu  - Instalando R en ubuntu  · Alephsa
+</title>
+    <link rel="stylesheet" href="/theme/css/bootstrap.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/theme/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/theme/css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="/theme/css/creative.css" type="text/css">
+    <script type="text/javascript" src="/theme/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/theme/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/theme/js/jquery.easing.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">Alephsa</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+					<li ><a href="/pages/porque-alephsa.html">Alephsa?</a></li>
+					<li ><a href="/pages/ada.html">Análisis de datos</a></li>
+					<li ><a href="/pages/community.html">Comunidades</a></li>
+					<li ><a href="/pages/infocracia.html">Infocracia</a></li>
+					<li ><a href="/pages/team.html">Equipo</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+<header class="header-article">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-left ">
+				<div class="col-lg-8">
+					<h1 class="section-heading">R en ubuntu</h1>
+
+				<h3 class="text-faded">Instalando R en ubuntu</h3>
+				<p>
+							<em>Publicado por</em>
+							<a href="#">Nicolas Bohorquez</a>
+							<em>en</em>
+							<time pubdate="pubdate" datetime="2015-06-23T15:42:00-05:00">jun 23, 2015</time>
+							<em> - Actualizado</em>
+							<time pubdate="modified" datetime="2015-06-23T15:42:00-05:00">jun 23, 2015</time>
+					/
+							<em>Categoría :</em>
+							<a class="category-link" href="/categories.html#Tools-ref">Tools</a>
+				</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</header>
+<section>
+	<div class="container">
+
+        <div class="row">
+            <!-- Blog Post Content Column -->
+        <div class="col-lg-8">
+				<div class="col-lg-2">
+					<img src="/images/ds/r.jpg" title="R en ubuntu" width="120px" />
+				</div>
+				<div class="col-lg-6">
+                    <strong>Etiquetas</strong>:
+                        <a href="/tags.html#data-science-ref">data science</a>
+                        <a href="/tags.html#R-ref">R</a>
+                        <a href="/tags.html#ubuntu-ref">ubuntu</a>
+&nbsp;
+				</div>
+				<div class="col-lg-12">
+	                <!-- Post Content -->
+	                <p class="lead"><p>En el curso de herramientas para <em>data science</em><sup id="sf-r-en-ubuntu-1-back"><a class="simple-footnote" href="#sf-r-en-ubuntu-1" title="The Data Scientist’s Toolbox">1</a></sup> que estoy tomando via <a href="https://class.coursera.org/datascitoolbox-022" title="Data Science Toolbox">Coursera</a> tienen videos de
+instalación del entorno de trabajo para R en plataformas MAC y Win2, sin embargo no hay
+una guía para Linux (Ubuntu).</p>
+<h1 id="r">R</h1>
+<p>R se encuentra actualmente en su versión 3.2.1 (18/06/2015) pero Ubuntu 14.04 trae en sus repositorios la version 3.0.1, asi que vamos a usar el repositorio actualizado por <a href="https://launchpad.net/~marutter/+archive/ubuntu/rrutter?field.series_filter=trusty" title="PPA Lauchpad R repo">Michael Rutter</a>, para desde una terminal:</p>
+<div class="highlight"><pre>sudo add-apt-repository ppa:marutter/rrutter
+sudo apt-get update
+sudo apt-get install r-base
+</pre></div>
+
+
+<p>Consume unos 101Mb de espacio y puede verificarse la versión instalada usando el siguiente comando desde la terminal:</p>
+<div class="highlight"><pre>R
+&gt; version
+</pre></div>
+
+
+<p>que nos debe arrojar una respuesta como:</p>
+<div class="highlight"><pre>platform       x86_64-pc-linux-gnu
+arch           x86_64
+os             linux-gnu
+system         x86_64, linux-gnu
+status
+major          3
+minor          2.1
+year           2015
+month          06
+day            18
+svn rev        68531
+language       R
+version.string R version 3.2.1 (2015-06-18)
+nickname       World-Famous Astronaut
+&gt; q()
+Save workspace image? [y/n/c]: n
+</pre></div>
+
+
+<h2 id="r-studio">R Studio</h2>
+<p><a href="http://www.rstudio.com" title="R Studio">RStudio</a> es un IDE basado en QT para trabajar sobre R, para instalarlo basta con tener descomprimir el tar.gz descargado del sitio web y ejecutar bin/rstudio o usar uno de los instaladores provistos por plataforma.</p>
+<p><img alt="Rstudio" title="Rstudio" width="640px;" src="/images/ds/Rstudio-nicolas-bohorquez.png"></p>
+<p>Imagen de Cabecera: <a href="https://www.flickr.com/photos/carbonnyc/67187558/" title="R Graffiti">David Goehring</a></p><ol class="simple-footnotes"><li id="sf-r-en-ubuntu-1">The Data Scientist’s Toolbox <a class="simple-footnote-back" href="#sf-r-en-ubuntu-1-back">↩</a></li></ol></p>
+				</div>
+      </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+        <div class='col-lg-4 ' style="border-left:solid 1px #e56f0e;">
+
+					<h5>Nube de Etiquetas</h5>
+					<ul class="tagcloud">
+					        <li class="tag-4"><a href="/tag/wordpress.html">wordpress</a></li>
+					        <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
+					        <li class="tag-4"><a href="/tag/publishing.html">publishing</a></li>
+					        <li class="tag-1"><a href="/tag/data-science.html">data science</a></li>
+					        <li class="tag-4"><a href="/tag/r.html">R</a></li>
+					        <li class="tag-4"><a href="/tag/pelican.html">pelican</a></li>
+					        <li class="tag-1"><a href="/tag/openrefine.html">openrefine</a></li>
+					</ul>
+					<p>
+						<small><a href="/random.html" title="Leer un articulo al azar">Me siento con suerte</a></small>
+					</p>
+                    <!-- Begin MailChimp Signup Form -->
+                    <div id="mc_embed_signup">
+                        <form action="Powered by mailchimp" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <h5>Suscribase a las actualizaciones</h5>
+                            <input type="email" value="" name="EMAIL" class="email input-sm" id="mce-EMAIL" placeholder="name@ejemplo.com" required>
+                            <input type="submit" value="Suscribirme" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+                        </form>
+                    </div>
+
+                    <!--End mc_embed_signup-->
+                </div>
+            </div>
+        </div>
+			<div class="row">
+				<!-- Blog Post Content Column -->
+				<div class="col-lg-8">
+				    <p id="post-share-links">
+				        Compartir en:
+				        <a href="http://twitter.com/home?status=R%20en%20ubuntu%20Instalando%20R%20en%20ubuntu%20/2015/06/r-en-ubuntu.html" target="_blank" title="Share on Twitter">Twitter</a>
+				        ❄
+				        <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=/2015/06/r-en-ubuntu.html" target="_blank" title="Share on Facebook">Facebook</a>
+				        ❄
+				        <a href="https://plus.google.com/share?url=/2015/06/r-en-ubuntu.html" target="_blank" title="Share on Google Plus">Google+</a>
+				        ❄
+				        <a href="mailto:?subject=R%20en%20ubuntu%20Instalando%20R%20en%20ubuntu&amp;body=/2015/06/r-en-ubuntu.html" target="_blank" title="Share via Email">Email</a>
+				    </p>
+				</div>
+			</div>
+    </div>
+</section>
+
+<a  name="contact"></a>
+    <!-- Footer -->
+    <footer >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+            					<li ><a href="/pages/porque-alephsa.html">Alephsa?</a></li>
+            					<li ><a href="/pages/ada.html">Análisis de datos</a></li>
+            					<li ><a href="/pages/community.html">Comunidades</a></li>
+            					<li ><a href="/pages/infocracia.html">Infocracia</a></li>
+            					<li ><a href="/pages/team.html">Equipo</a></li>
+                    </ul>
+                    <p class="copyright text-muted small"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Alephsa website</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.alephsa.com" property="cc:attributionName" rel="cc:attributionURL">Alephsa SAS</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+    
+</body>
+
+</html>
