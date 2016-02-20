@@ -3,6 +3,9 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+#container-logo{
+  height: 338px;
+}
  #blog{
    background: #fff;
  }
@@ -202,57 +205,6 @@
 }
  /*--------------------fin de estilos para timeline-------------------*/
 
- /*Inicio de estilos de hexagonos*/
-  .hex{
-      width: 180px;
-      height: 103.923px;
-      background-color: #ccc;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: auto 173px;
-      position: relative;
-      float: left;
-      margin:32.24px 6px;
-      text-align: center;
-      zoom:1;
-
-  }
-.hex-gap{
-      margin-left: 103.923px;
-
-  }
-  .hex a{
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-indent: -9999em;
-    position: absolute;
-    top: 0;
-    left: 0;
-
-  }
-  .hex .corner-1, .hex .corner-2{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: inherit;
-    z-index: -2;
-    overflow: hidden;
-    backface-visibility: hidden;
-  }
-  .hex .corner-1{
-    z-index: -1;
-    transform: rotate(60deg);
-
-  }
-  .hex .corner-2{
-    z-index: -1;
-    transform: rotate(-60deg);
-
-  }
- /* fin de estilos de hexagonos*/
 
 h1.logo{
   background-image: url("../img/Logo-final-02.png") ;
@@ -459,7 +411,7 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url(../img/header3.jpg);
+    background-image: url(../img/header.jpg);
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;

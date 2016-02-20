@@ -17,10 +17,6 @@
     <link rel="stylesheet" href="/theme/font-awesome/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="/theme/css/animate.min.css" type="text/css">
     <link rel="stylesheet" href="/theme/css/creative.css" type="text/css">
-    <script type="text/javascript" src="/theme/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/theme/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.js"></script>
-    <script type="text/javascript" src="/theme/js/jquery.easing.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,9 +44,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
 					<li ><a href="/pages/porque-alephsa.html">Alephsa?</a></li>
-					<li ><a href="/pages/ada.html">Análisis de datos</a></li>
-					<li ><a href="/pages/community.html">Comunidades</a></li>
 					<li ><a href="/pages/infocracia.html">Infocracia</a></li>
+					<li ><a href="/pages/open-source.html">Open source</a></li>
 					<li ><a href="/pages/team.html">Equipo</a></li>
                 </ul>
             </div>
@@ -103,8 +98,8 @@
 				</div>
 				<div class="col-lg-12">
 	                <!-- Post Content -->
-	                <p class="lead"><p>En <a href="http://www.alephsa.com" title="Alephsa"><strong>Alephsa</strong></a> manejamos <em>datasets</em><sup id="sf-openrefine-install-1-back"><a class="simple-footnote" href="#sf-openrefine-install-1" title="conjuntos de datos">1</a></sup> muy variados, y las labores de ingenieria de datos además de gustarnos nos permite probar herramientas muy variadas, de hecho es bien conocido que la mayor parte del trabajo en <em>data science</em> actualmente tiene que ver con la ingeniería de datos, es decir a labores de búsqueda, descarga y limpieza de datos.</p>
-<p><a href="http://openrefine.org" title="OpenRefine">Openrefine</a> es una herramienta que provee un servidor para realizar este tipo de tareas con un cliente web muy sencillo de manejar, incluye utilidades comunes para el tratamiento de datos, un lenguaje de expresiones propio (<a href="https://github.com/OpenRefine/OpenRefine/wiki/Jython" title="GREL">GREL</a>) o usar Python (<a href="https://github.com/OpenRefine/OpenRefine/wiki/Jython" title="Jython en openrefine">Jython 2.5.1</a>) como lenguaje<sup id="sf-openrefine-install-2-back"><a class="simple-footnote" href="#sf-openrefine-install-2" title="Estaria bueno incluir la nueva version 2.7 de Jython para tener mayor compatibilidad">2</a></sup>. En esta serie de post trabajaremos sobre Linux pero las instrucciones son fácilmente adaptables a otros sistemas operativos<sup id="sf-openrefine-install-3-back"><a class="simple-footnote" href="#sf-openrefine-install-3" title="Aunque deberia considerar probar Linux, es libre y tiene muchas otras ventajas">3</a></sup>.</p>
+	                <p class="lead"><p>En <a href="http://www.alephsa.com" title="Alephsa"><strong>Alephsa</strong></a> manejamos <em>datasets</em>[ref]conjuntos de datos[/ref] muy variados, y las labores de ingenieria de datos además de gustarnos nos permite probar herramientas muy variadas, de hecho es bien conocido que la mayor parte del trabajo en <em>data science</em> actualmente tiene que ver con la ingeniería de datos, es decir a labores de búsqueda, descarga y limpieza de datos.</p>
+<p><a href="http://openrefine.org" title="OpenRefine">Openrefine</a> es una herramienta que provee un servidor para realizar este tipo de tareas con un cliente web muy sencillo de manejar, incluye utilidades comunes para el tratamiento de datos, un lenguaje de expresiones propio (<a href="https://github.com/OpenRefine/OpenRefine/wiki/Jython" title="GREL">GREL</a>) o usar Python (<a href="https://github.com/OpenRefine/OpenRefine/wiki/Jython" title="Jython en openrefine">Jython 2.5.1</a>) como lenguaje[ref]Estaria bueno incluir la nueva version 2.7 de Jython para tener mayor compatibilidad[/ref]. En esta serie de post trabajaremos sobre Linux pero las instrucciones son fácilmente adaptables a otros sistemas operativos[ref]Aunque deberia considerar probar Linux, es libre y tiene muchas otras ventajas[/ref].</p>
 <h1 id="primeros-pasos">Primeros pasos</h1>
 <p>La wiki de OpenRefine tiene <a href="https://github.com/OpenRefine/OpenRefine/wiki/Installation-Instructions" title="Instalar OpenRefine">instrucciones</a> muy claras sobre la descarga y ejecución en Linux, Win2 y MacOS. Sin embargo me gustaría agregar que es buena idea agregar más memoria a la ejecución del servidor si se quiere trabajar comodamente con <em>datasets</em> de mas de algunas decenas de miles de datos. Para ello la wiki contiene <a href="https://github.com/OpenRefine/OpenRefine/wiki/FAQ:-Allocate-More-Memory" title="Agregar mas memoria a OpenRefine">instrucciones</a> claras por plataforma.</p>
 <h1 id="dataset-de-ejemplo">Dataset de ejemplo</h1>
@@ -127,7 +122,7 @@
 <p>Sobre los cuales vamos a hacer algunas tareas comunes para poder hacer un analisis preliminar.</p>
 <h1 id="agregando-los-datos">Agregando los datos</h1>
 <p>Cada uno de los <em>dataset</em> consiste en varios archivos separados por comas (CSV) que debemos concatenar antes de cargarlos en OpenRefine. Para ello desde una terminal nos situamos en el directorio donde tenemos los archivos y ejecutamos:</p>
-<div class="highlight"><pre>&gt; cd /home/usuario/directorio_donde_estan_los_archivos
+<div class="highlight"><pre><span></span>&gt; cd /home/usuario/directorio_donde_estan_los_archivos
 &gt; cat Ministerio_de_tecnologias_de_informacion_y_las_comunicaciones.contratoshistoricos* &gt; mtic.contratos.historicos.csv
 &gt; cat Ministerio_de_tecnologias_de_informacion_y_las_comunicaciones.contratosactivos*  mtic.contratos.activos.csv
 &gt; cat mtic.contratos.* &gt; mtic.contratos.csv
@@ -143,7 +138,7 @@
 <p>y desde OpenRefine hacemos un nuevo proyecto con el archivo <strong>mtic.contratos.csv</strong>:</p>
 <p><img src="/images/openrefine/1-1.png" width="640px" title="Proyecto en OpenRefine"></p>
 <p>Una vez generado el proyecto lo primero que notamos es que el numero de registros no coincide (628111 vs 628118 esperados), porque? cómo lo arreglamos?, para resolver éstas y otras dudas (además de generar nuevas dudas), por favor, continúe con nuestro siguiente post.</p>
-<p>Un saludo.</p><ol class="simple-footnotes"><li id="sf-openrefine-install-1">conjuntos de datos <a class="simple-footnote-back" href="#sf-openrefine-install-1-back">↩</a></li><li id="sf-openrefine-install-2">Estaria bueno incluir la nueva version 2.7 de Jython para tener mayor compatibilidad <a class="simple-footnote-back" href="#sf-openrefine-install-2-back">↩</a></li><li id="sf-openrefine-install-3">Aunque deberia considerar probar Linux, es libre y tiene muchas otras ventajas <a class="simple-footnote-back" href="#sf-openrefine-install-3-back">↩</a></li></ol></p>
+<p>Un saludo.</p></p>
 						<div class="col-lg-12">
 						    <p>Este articulo es el número 1 en la serie "openrefine", otros artículos:</p>
 						    <ol class="parts">
@@ -169,13 +164,13 @@
 
 					<h5>Nube de Etiquetas</h5>
 					<ul class="tagcloud">
-					        <li class="tag-4"><a href="/tag/wordpress.html">wordpress</a></li>
-					        <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
-					        <li class="tag-4"><a href="/tag/publishing.html">publishing</a></li>
-					        <li class="tag-1"><a href="/tag/data-science.html">data science</a></li>
-					        <li class="tag-4"><a href="/tag/r.html">R</a></li>
 					        <li class="tag-4"><a href="/tag/pelican.html">pelican</a></li>
 					        <li class="tag-1"><a href="/tag/openrefine.html">openrefine</a></li>
+					        <li class="tag-4"><a href="/tag/r.html">R</a></li>
+					        <li class="tag-4"><a href="/tag/wordpress.html">wordpress</a></li>
+					        <li class="tag-4"><a href="/tag/publishing.html">publishing</a></li>
+					        <li class="tag-1"><a href="/tag/data-science.html">data science</a></li>
+					        <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
 					</ul>
 					<p>
 						<small><a href="/random.html" title="Leer un articulo al azar">Me siento con suerte</a></small>
@@ -193,21 +188,6 @@
                 </div>
             </div>
         </div>
-			<div class="row">
-				<!-- Blog Post Content Column -->
-				<div class="col-lg-8">
-				    <p id="post-share-links">
-				        Compartir en:
-				        <a href="http://twitter.com/home?status=Openrefine%20Iniciando%20con%20OpenRefine%20/2015/06/openrefine-install.html" target="_blank" title="Share on Twitter">Twitter</a>
-				        ❄
-				        <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=/2015/06/openrefine-install.html" target="_blank" title="Share on Facebook">Facebook</a>
-				        ❄
-				        <a href="https://plus.google.com/share?url=/2015/06/openrefine-install.html" target="_blank" title="Share on Google Plus">Google+</a>
-				        ❄
-				        <a href="mailto:?subject=Openrefine%20Iniciando%20con%20OpenRefine&amp;body=/2015/06/openrefine-install.html" target="_blank" title="Share via Email">Email</a>
-				    </p>
-				</div>
-			</div>
     </div>
 </section>
 
@@ -219,9 +199,8 @@
                 <div class="col-lg-12">
                     <ul class="list-inline">
             					<li ><a href="/pages/porque-alephsa.html">Alephsa?</a></li>
-            					<li ><a href="/pages/ada.html">Análisis de datos</a></li>
-            					<li ><a href="/pages/community.html">Comunidades</a></li>
             					<li ><a href="/pages/infocracia.html">Infocracia</a></li>
+            					<li ><a href="/pages/open-source.html">Open source</a></li>
             					<li ><a href="/pages/team.html">Equipo</a></li>
                     </ul>
                     <p class="copyright text-muted small"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Alephsa website</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.alephsa.com" property="cc:attributionName" rel="cc:attributionURL">Alephsa SAS</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
@@ -229,16 +208,11 @@
                 </div>
             </div>
         </div>
-    </footer>    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="js/creative.js"></script>
+    </footer>    <script type="text/javascript" src="/theme/js/jquery.js"></script>
+    <script type="text/javascript" src="/theme/js/snap.svg-min.js"></script>
+    <script type="text/javascript" src="/theme/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/theme/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="/theme/js/logo-anim.js"></script>
     
 </body>
 
